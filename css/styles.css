@@ -11253,6 +11253,7 @@ header.masthead .masthead-heading {
 
 .img-brand {
   height: 2.75rem;
+  filter: grayscale(100%);
 }
 
 section#contact {
