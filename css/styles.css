@@ -10942,6 +10942,9 @@ p {
     margin-right: 0;
   }
 }
+header.masthead::before {
+  filter: brightness(0.2);
+}
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
@@ -10955,6 +10958,8 @@ header.masthead {
   box-sizing: border-box;
   box-shadow: inset 0 0 250px 100px black;
 }
+
+
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
   font-style: italic;
