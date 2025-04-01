@@ -6,12 +6,13 @@
     <meta name="description" content="Nick Elliott - Director of IT in Education | EdTech Innovation" />
     <meta name="author" content="Nick Elliott" />
     <title>Nick Elliott | EdTech Innovator</title>
-    <!-- Favicon (Keeping this minimal, assuming you have a basic favicon.ico) -->
+    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Tailwind CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
     <!-- Custom CSS -->
     <link href="css/styles.css" rel="stylesheet" />
 </head>
@@ -21,20 +22,24 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#hero" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">Nick Elliott</a>
             <div class="space-x-6">
-                <a href="#about" class="text-gray-300 hover:text-blue-400 transition">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-blue-400 transition">Experience</a>
-                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition">Skills</a>
-                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition">Contact</a>
+                <a href="#about" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">About</a>
+                <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Experience</a>
+                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Projects</a>
+                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Skills</a>
+                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900">
-        <div class="container mx-auto px-6 text-center">
-            <div class="w-32 h-32 rounded-full mx-auto mb-6 bg-blue-500 flex items-center justify-center animate-fade-in">
-                <i class="fas fa-user-tie text-5xl text-white"></i>
+    <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 relative">
+        <!-- Container for Three.js canvas -->
+        <div id="three-js-container" class="absolute inset-0 z-0"></div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden animate-fade-in transform transition-all duration-300 hover:scale-110 hover:rotate-6 hover:shadow-glow">
+                <img src="/assets/img/profile.jpg" alt="Profile picture" class="w-full h-full object-cover">
             </div>
             <h1 class="text-5xl font-bold mb-4 animate-slide-up">Nick Elliott</h1>
             <p class="text-2xl text-blue-400 mb-6 animate-slide-up delay-200">Director of IT in Education | EdTech Innovator</p>
@@ -52,41 +57,56 @@
                     <p class="text-lg mb-4 animate-fade-in delay-200">I’m Nick Elliott, a tech leader driving digital transformation in education. As Director of IT at Knoxville CUSD #202, I blend strategic vision with hands-on expertise to modernize infrastructure and empower learning environments.</p>
                     <p class="text-lg animate-fade-in delay-400">With a background in full-stack development and enterprise systems, I’m passionate about open-source solutions, containerization, and building tools that make a real impact.</p>
                 </div>
-                <div class="md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-900 h-64 rounded-lg shadow-lg flex items-center justify-center">
-                    <i class="fas fa-laptop-code text-6xl text-white animate-pulse"></i>
+                <div class="w-full md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-900 h-64 rounded-lg shadow-lg flex items-center justify-center max-w-lg mx-auto">
+                    <i class="fas fa-laptop-code text-4xl md:text-6xl text-white animate-pulse"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Updated Experience Section -->
     <section id="experience" class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 animate-fade-in">Experience</h2>
             <div class="space-y-12 max-w-3xl mx-auto">
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-200">
                     <h3 class="text-2xl font-semibold text-blue-300">Director of IT</h3>
-                    <p class="text-gray-400">Knoxville CUSD #202 | May 2021 - Present</p>
+                    <p class="text-gray-400">Knoxville CUSD #202 | May 2021 - Present (4 years)</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200">
-                        <li>Modernized district-wide infrastructure with a 100Gb backbone</li>
-                        <li>Deployed Docker-based services for help desk and asset management</li>
-                        <li>Migrated virtualization from VMware to XCP-ng</li>
+                        <li>Led migration to open-source solutions, cutting costs while maintaining quality</li>
+                        <li>Architected Docker-based infrastructure for services like help desk (Zammad), network management (UniFi), and asset tracking (Snipe-IT)</li>
+                        <li>Implemented Caddy server with reverse proxy for secure service delivery</li>
+                        <li>Migrated from VMware to XCP-ng/Xen Orchestra, optimizing virtualization</li>
+                        <li>Developed a Next.js asset tracking app on Vercel with MongoDB and AD integration</li>
+                        <li>Created IT policies and led a 2-person team supporting district-wide initiatives</li>
+                        <li>Managed Google Workspace and Active Directory with PowerShell and Python</li>
+                        <li>Ensured compliance with ISBE SIS state reporting requirements</li>
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-400">
                     <h3 class="text-2xl font-semibold text-blue-300">Systems Administrator & Software Engineer</h3>
-                    <p class="text-gray-400">NAEIR | Oct 2018 - Apr 2021</p>
+                    <p class="text-gray-400">NAEIR | Oct 2018 - Apr 2021 (2 years 7 months)</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200">
-                        <li>Built and maintained web applications with Agile workflows</li>
-                        <li>Optimized IT infrastructure for performance and uptime</li>
+                        <li>Developed desktop and web applications using Agile methodology</li>
+                        <li>Managed IT infrastructure, resolving performance and capacity issues</li>
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-600">
                     <h3 class="text-2xl font-semibold text-blue-300">Information Systems Technician</h3>
-                    <p class="text-gray-400">City of Galesburg | Apr 2013 - Oct 2018</p>
+                    <p class="text-gray-400">City of Galesburg | Apr 2013 - Oct 2018 (5 years 7 months)</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200">
-                        <li>Developed Python tools and an Android app for system efficiency</li>
-                        <li>Led migrations with Microsoft WDS deployments</li>
+                        <li>Utilized Python, PLC, and SCADA to enhance system performance</li>
+                        <li>Designed an Android app to optimize information processing</li>
+                        <li>Set up Microsoft WDS for efficient software deployments</li>
+                        <li>Provided technical support and led system migrations</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-800">
+                    <h3 class="text-2xl font-semibold text-blue-300">Computer Support Technician</h3>
+                    <p class="text-gray-400">Office Specialists, Inc. | Dec 2013 - Jan 2014 (2 months)</p>
+                    <ul class="list-disc ml-6 mt-4 text-gray-200">
+                        <li>Supported imaging, networking, and equipment troubleshooting</li>
+                        <li>Reduced imaging time from 12 hours to 3 hours through process improvements</li>
                     </ul>
                 </div>
             </div>
@@ -103,7 +123,7 @@
                         <i class="fas fa-network-wired text-5xl text-white"></i>
                     </div>
                     <h3 class="text-xl font-semibold mt-4 text-blue-300">Infrastructure Overhaul</h3>
-                    <p class="text-gray-300 mt-2">Revamped servers and networking for a K-12 district with a 100Gb backbone.</p>
+                    <p class="text-gray-300 mt-2">Revamped servers and networking for a K-12 district with a 10Gb backbone.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-400">
                     <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
@@ -158,7 +178,7 @@
                 </div>
                 <div>
                     <i class="fas fa-envelope text-3xl text-blue-400 mb-2"></i>
-                    <p><a href="mailto:elliott.nicholase@gmail.com" class="hover:text-blue-300 transition">elliott.nicholase@gmail.com</a></p>
+                    <p><a href="mailto:nick@gigabitnick.com"" class="hover:text-blue-300 transition">elliott.nicholase@gmail.com</a></p>
                 </div>
                 <div>
                     <i class="fab fa-linkedin text-3xl text-blue-400 mb-2"></i>
@@ -171,7 +191,7 @@
 
     <!-- Footer -->
     <footer class="py-6 bg-gray-800 text-center">
-        <p class="text-gray-400">© 2025 Nick Elliott | Built with Passion</p>
+        <p class="text-gray-400">© 2025 Nick Elliott</p>
     </footer>
 
     <!-- Custom JS (Optional for smooth scrolling) -->
