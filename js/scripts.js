@@ -82,6 +82,20 @@ const container = document.getElementById("three-js-container");
         const colors = new Float32Array(particleCount * 3);
         const containerWidth = container.clientWidth;
         const containerHeight = container.clientHeight;
+
+        // Create a circular texture
+        const createParticleTexture = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 32;
+            canvas.height = 32;
+            const ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.arc(16, 16, 14, 0, Math.PI * 2);
+            ctx.fillStyle = '#ffffff';
+            ctx.fill();
+            return new THREE.CanvasTexture(canvas);
+        };
+
         for (let i = 0; i < particleCount * 3; i += 3) {
             positions[i] = (Math.random() - 0.5) * containerWidth;     // X
             positions[i + 1] = (Math.random() - 0.5) * containerHeight; // Y
@@ -90,9 +104,19 @@ const container = document.getElementById("three-js-container");
             colors[i + 1] = 0.51; // G
             colors[i + 2] = 0.96; // B
         }
+
         particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
         particles.setAttribute("color", new THREE.BufferAttribute(colors, 3));
-        const material = new THREE.PointsMaterial({ size: 2, vertexColors: true });
+
+        // Use PointsMaterial with texture
+        const material = new THREE.PointsMaterial({
+            size: 1, // Adjust size as needed
+            vertexColors: true,
+            map: createParticleTexture(),
+            transparent: true,
+            depthWrite: false // Helps with rendering order
+        });
+
         const particleSystem = new THREE.Points(particles, material);
         scene.add(particleSystem);
 
@@ -105,3 +129,21 @@ const container = document.getElementById("three-js-container");
             renderer.render(scene, camera);
         }
         animate();
+
+// Hamburger menu toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Optional: Close menu when clicking a link
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    });
+});

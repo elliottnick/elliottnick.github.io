@@ -65,3 +65,39 @@ html {
   animation: gradientShift 10s ease infinite;
 }
 
+/* Custom glow effect */
+.shadow-glow {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+}
+
+/* Optional: Add a subtle rotation on hover */
+.skill-card:hover {
+  transform: translateY(-0.5rem) rotate(2deg);
+}
+
+/* Ensure smooth transitions */
+.skill-card {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Optional: Add a subtle background animation */
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}

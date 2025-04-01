@@ -17,19 +17,39 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-50">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">Nick Elliott</a>
-            <div class="space-x-6">
-                <a href="#about" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">About</a>
-                <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Experience</a>
-                <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Projects</a>
-                <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Skills</a>
-                <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Contact</a>
-            </div>
+<!-- Navigation -->
+<nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#hero" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition">Nick Elliott</a>
+
+        <!-- Hamburger Button (Visible on mobile only) -->
+        <button id="menu-btn" class="md:hidden text-gray-300 hover:text-blue-400 focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-6">
+            <a href="#about" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">About</a>
+            <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Experience</a>
+            <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Projects</a>
+            <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Skills</a>
+            <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Contact</a>
         </div>
-    </nav>
+    </div>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+        <div class="flex flex-col items-center space-y-4 py-4">
+            <a href="#about" class="text-gray-300 hover:text-blue-400 transition-all duration-300">About</a>
+            <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Experience</a>
+            <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Projects</a>
+            <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Skills</a>
+            <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Contact</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900 relative">
@@ -86,9 +106,26 @@
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-400">
                     <h3 class="text-2xl font-semibold text-blue-300">Systems Administrator & Software Engineer</h3>
                     <p class="text-gray-400">NAEIR | Oct 2018 - Apr 2021 (2 years 7 months)</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-200">
-                        <li>Developed desktop and web applications using Agile methodology</li>
-                        <li>Managed IT infrastructure, resolving performance and capacity issues</li>
+                    <p class="text-gray-200 mt-4">Played a pivotal role in modernizing IT infrastructure, enhancing system performance, and developing robust software solutions. Leveraged a diverse skill set to manage enterprise systems, streamline operations, and deliver innovative applications.</p>
+                    <ul class="list-disc ml-6 mt-4 text-gray-200 space-y-2">
+                        <li><strong>Cloud Migration & Email Systems:</strong> Successfully orchestrated the migration of an Exchange 2010 server to a fully integrated Office 365 environment, implementing Active Directory synchronization to ensure seamless user authentication and email continuity across the organization.</li>
+                        <li><strong>Infrastructure Modernization:</strong> Consolidated and upgraded physical servers to Windows Server 2019, optimizing resource utilization and enhancing system reliability. Transitioned VMware vSphere from an outdated Windows Server installation to a streamlined vSphere 6.7 OVA, integrating vMotion for live migration and upgrading networking with a 10G switch and NICs to connect the SAN, significantly boosting performance.</li>
+                        <li><strong>Storage & Hardware Enhancements:</strong> Reconfigured Dell server storage arrays from RAID 5 to RAID 10 for improved redundancy and speed, proactively replacing failed drives to maintain uptime. Upgraded CPUs in legacy servers to higher clock-rate models, accelerating performance on single-core-dependent AlphaServer systems.</li>
+                        <li><strong>Network Optimization:</strong> Partially overhauled the network by deploying Ubiquiti switches and configuring VLANs to segregate traffic types, enhancing security and efficiency. Extended VLAN configurations to existing HP switches for consistent network segmentation.</li>
+                        <li><strong>Legacy Systems Expertise:</strong> Mastered OpenVMS on a virtualized AlphaServer 1200, authoring DCL scripts to automate tasks and gaining hands-on experience with RMS databases to support critical legacy operations.</li>
+                        <li><strong>Security & Monitoring:</strong> Implemented a Graylog server to centralize and simplify log analysis for internally developed applications and websites. Configured and maintained a Fortigate firewall to safeguard network integrity, and managed a Symantec Enterprise Protection server to ensure robust endpoint security.</li>
+                        <li><strong>DNS & Proxy Services:</strong> Converted an on-premises DNS server to a cloud-based DNS service for improved scalability and uptime. Established an Nginx reverse proxy with a Let’s Encrypt wildcard certificate, reducing the need for multiple static IPs while securing external services.</li>
+                        <li><strong>Software Development:</strong> Designed and developed C# applications, including an ASP.NET Core website with modern CSS and JavaScript frontends. Co-developed a .NET Framework WPF application using DevExpress MVVM modules for enhanced UI functionality, and scheduled synchronization tasks with .NET-based services.</li>
+                        <li><strong>Database Management:</strong> Utilized Oracle 12c as the backend for custom applications, writing and compiling stored procedures to optimize data access in .NET apps. Executed SQL queries to maintain data integrity and resolve issues, leveraging DevArt adapters for seamless integration.</li>
+                        <li><strong>Automation & Scripting:</strong> Authored PowerShell scripts to automate Windows administration tasks, including restarting all computers in an Active Directory OU, retrieving ClickOnce .NET app versions across specific OUs, and managing file backups for operational continuity.</li>
+                        <li><strong>Version Control & DevOps:</strong> Employed Azure DevOps and SourceTree’s GUI for efficient Git version control, streamlining collaborative development workflows and ensuring code quality across repositories.</li>
+                        <li><strong>Backup & Recovery:</strong> Managed and monitored Veeam Backup & Replication 10 to oversee comprehensive backup strategies, ensuring data protection and rapid recovery capabilities for all critical systems.</li>
+                        <li><strong>Network Monitoring:</strong> Deployed PRTG software to monitor network devices, providing real-time insights into performance and potential issues across the infrastructure.</li>
+                        <li><strong>Telephony & ISP Transition:</strong> Administered the Mitel phone server, updating and installing phones as needed, and guided a seamless switchover to a new ISP and telephony provider, minimizing downtime and ensuring service continuity.</li>
+                        <li><strong>Support & Legacy Maintenance:</strong> Troubleshot and maintained a legacy ColdFusion server and its applications, addressed employee inquiries regarding IT systems, and repaired, upgraded, and configured PCs and peripherals to meet operational needs.</li>
+                        <li><strong>Helpdesk & User Support:</strong> Implemented OsTicket as a helpdesk system, encouraging adoption among users to streamline support requests and improve response times.</li>
+                        <li><strong>Cloud Services & Email:</strong> Leveraged AWS services, including Amazon SES for mass email campaigns and CloudFront for efficient website image hosting, alongside managing a hosted WordPress site for organizational presence.</li>
+                        <li><strong>Additional Responsibilities:</strong> Managed a Postfix SMTP relay server, administered Active Directory with group policies, installed network cabling as required, and influenced process improvements to enhance overall IT efficiency.</li>
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-600">
@@ -150,22 +187,65 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-800">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 animate-fade-in">Skills</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-200">Strategic IT Leadership</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-300">EdTech Innovation</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-400">Docker</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-500">Python</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-600">Next.js</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-700">Google Workspace</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-800">Active Directory</span>
-                <span class="bg-blue-600 text-white px-4 py-2 rounded-full animate-fade-in delay-900">VMware & XCP-ng</span>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-800 overflow-hidden">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-16 text-blue-400 animate-fade-in relative">
+            Skills
+            <span class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></span>
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-200">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fas fa-lightbulb text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Strategic IT Leadership</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-300">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fas fa-graduation-cap text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">EdTech Innovation</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-400">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fab fa-docker text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Docker</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-500">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fab fa-python text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Python</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-600">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fab fa-react text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Next.js</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-700">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fab fa-google text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Google Workspace</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-800">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fas fa-users-cog text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">Active Directory</span>
+            </div>
+            <div class="skill-card bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-glow transition-all duration-300 transform hover:-translate-y-2 animate-fade-in delay-900">
+                <div class="flex items-center justify-center h-12 w-12 mx-auto mb-3 rounded-full bg-blue-600">
+                    <i class="fas fa-server text-white text-xl"></i>
+                </div>
+                <span class="block text-center text-gray-100 font-medium">VMware & XCP-ng</span>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20">
@@ -196,6 +276,5 @@
 
     <!-- Custom JS (Optional for smooth scrolling) -->
     <script src="js/scripts.js"></script>
-    <script src="js/animation.js"></script>
 </body>
 </html>
