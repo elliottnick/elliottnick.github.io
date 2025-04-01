@@ -6,8 +6,8 @@
     <meta name="description" content="Nick Elliott - Director of IT in Education | EdTech Innovation" />
     <meta name="author" content="Nick Elliott" />
     <title>Nick Elliott | EdTech Innovator</title>
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
+    <!-- Favicon (Keeping this minimal, assuming you have a basic favicon.ico) -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Tailwind CSS -->
@@ -33,7 +33,9 @@
     <!-- Hero Section -->
     <section id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 to-blue-900">
         <div class="container mx-auto px-6 text-center">
-            <img class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-blue-500 animate-fade-in" src="assets/img/profile.jpg" alt="Nick Elliott" />
+            <div class="w-32 h-32 rounded-full mx-auto mb-6 bg-blue-500 flex items-center justify-center animate-fade-in">
+                <i class="fas fa-user-tie text-5xl text-white"></i>
+            </div>
             <h1 class="text-5xl font-bold mb-4 animate-slide-up">Nick Elliott</h1>
             <p class="text-2xl text-blue-400 mb-6 animate-slide-up delay-200">Director of IT in Education | EdTech Innovator</p>
             <p class="text-lg max-w-2xl mx-auto mb-8 animate-slide-up delay-400">Transforming K-12 education with cutting-edge technology and strategic leadership.</p>
@@ -50,8 +52,8 @@
                     <p class="text-lg mb-4 animate-fade-in delay-200">I’m Nick Elliott, a tech leader driving digital transformation in education. As Director of IT at Knoxville CUSD #202, I blend strategic vision with hands-on expertise to modernize infrastructure and empower learning environments.</p>
                     <p class="text-lg animate-fade-in delay-400">With a background in full-stack development and enterprise systems, I’m passionate about open-source solutions, containerization, and building tools that make a real impact.</p>
                 </div>
-                <div class="md:w-1/2">
-                    <img class="w-full rounded-lg shadow-lg transform hover:scale-105 transition" src="assets/img/about-tech.jpg" alt="Tech in Education" />
+                <div class="md:w-1/2 bg-gradient-to-br from-blue-600 to-blue-900 h-64 rounded-lg shadow-lg flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-6xl text-white animate-pulse"></i>
                 </div>
             </div>
         </div>
@@ -97,22 +99,30 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 animate-fade-in">Key Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-200">
-                    <img class="w-full h-48 object-cover rounded-t-lg" src="assets/img/projects/infrastructure.jpg" alt="Infrastructure" />
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                        <i class="fas fa-network-wired text-5xl text-white"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mt-4 text-blue-300">Infrastructure Overhaul</h3>
                     <p class="text-gray-300 mt-2">Revamped servers and networking for a K-12 district with a 100Gb backbone.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-400">
-                    <img class="w-full h-48 object-cover rounded-t-lg" src="assets/img/projects/virtualization.jpg" alt="Virtualization" />
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                        <i class="fas fa-server text-5xl text-white"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mt-4 text-blue-300">XCP-ng Migration</h3>
                     <p class="text-gray-300 mt-2">Shifted virtualization from VMware to XCP-ng, cutting costs.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-600">
-                    <img class="w-full h-48 object-cover rounded-t-lg" src="assets/img/projects/asset-tracker.jpg" alt="Asset Tracker" />
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                        <i class="fas fa-laptop text-5xl text-white"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mt-4 text-blue-300">Next.js Asset Tracker</h3>
                     <p class="text-gray-300 mt-2">Built a modern asset tracking app with Next.js and MongoDB.</p>
                 </div>
                 <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-800">
-                    <img class="w-full h-48 object-cover rounded-t-lg" src="assets/img/projects/containerization.jpg" alt="Containerization" />
+                    <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                        <i class="fas fa-boxes text-5xl text-white"></i>
+                    </div>
                     <h3 class="text-xl font-semibold mt-4 text-blue-300">Docker Services</h3>
                     <p class="text-gray-300 mt-2">Deployed containerized tools for help desk and backups.</p>
                 </div>
