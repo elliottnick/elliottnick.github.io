@@ -333,3 +333,26 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenu.classList.toggle('hidden');
     });
 });
+
+// Dynamically adjust hero padding based on nav height
+function adjustHeroPadding() {
+    const nav = document.querySelector('nav');
+    const hero = document.getElementById('hero');
+    const navHeight = nav.offsetHeight;
+
+    if (window.innerWidth < 1024) { // Mobile
+        hero.style.paddingTop = `${navHeight}px`;
+        if (window.matchMedia("(orientation: landscape)").matches) {
+            hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
+        } else {
+            hero.style.minHeight = '100vh'; // Reset for portrait
+        }
+    } else {
+        hero.style.paddingTop = ''; // Reset for desktop
+        hero.style.minHeight = '100vh';
+    }
+}
+
+// Run on load and resize
+window.addEventListener('load', adjustHeroPadding);
+window.addEventListener('resize', adjustHeroPadding);
