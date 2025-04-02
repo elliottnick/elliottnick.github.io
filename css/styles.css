@@ -213,3 +213,20 @@ html {
   opacity: 0;
   pointer-events: none; /* Prevents interaction when hidden */
 }
+
+/* Smooth transition for nav visibility */
+nav {
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hidden state: slide up out of view */
+nav.hidden {
+  transform: translateY(-100%);
+}
+
+/* Ensure it only applies on desktop */
+@media (max-width: 1023px) {
+  nav.hidden {
+      transform: none; /* Reset for mobile */
+  }
+}

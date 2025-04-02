@@ -249,6 +249,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileDots = document.querySelectorAll('.mobile-scroll-dot');
     const mobileIndicator = document.getElementById('mobile-scroll-indicator');
     const sections = document.querySelectorAll('section');
+    const nav = document.querySelector('nav'); // Select the nav
+    let lastScrollY = window.scrollY; // Track last scroll position
 
     // Function to update active indicators (both desktop and mobile)
     function updateActiveIndicator() {
@@ -292,6 +294,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to handle nav visibility on scroll (desktop only)
+    function handleNavVisibility() {
+        const currentScrollY = window.scrollY;
+
+        if (window.innerWidth >= 1024) { // Desktop only (lg breakpoint)
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                // Scrolling down and past 50px
+                nav.classList.add('hidden');
+            } else {
+                // Scrolling up or at top
+                nav.classList.remove('hidden');
+            }
+        }
+        lastScrollY = currentScrollY;
+    }
+
     // Smooth scrolling for desktop links
     desktopLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -310,21 +328,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Fade out mobile indicator during scroll, fade in when stopped
+    // Fade out mobile indicator and handle nav visibility during scroll
     let scrollTimeout;
     window.addEventListener('scroll', () => {
+        // Mobile indicator fade
         mobileIndicator.classList.add('hidden');
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(() => {
             mobileIndicator.classList.remove('hidden');
         }, 150); // Show after 150ms of no scrolling
+
+        // Update indicators and nav visibility
+        updateActiveIndicator();
+        handleNavVisibility();
     });
 
-    // Update on scroll
-    window.addEventListener('scroll', updateActiveIndicator);
-
-    // Initial update
+    // Initial updates
     updateActiveIndicator();
+    handleNavVisibility();
 
     // Mobile menu toggle
     const menuBtn = document.getElementById('menu-btn');
@@ -343,7 +364,7 @@ function adjustHeroPadding() {
     if (window.innerWidth < 1024) { // Mobile
         hero.style.paddingTop = `${navHeight}px`;
         if (window.matchMedia("(orientation: landscape)").matches) {
-            hero.style.minHeight = `calc(150vh - ${navHeight}px)`;
+            hero.style.minHeight = `calc(100vh - ${navHeight}px)`; // Fixed to 100vh, not 150vh
         } else {
             hero.style.minHeight = '100vh'; // Reset for portrait
         }
