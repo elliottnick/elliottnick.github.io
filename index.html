@@ -17,6 +17,18 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
+<!-- Mobile Scroll Indicator -->
+<div class="fixed bottom-4 right-4 z-50 lg:hidden">
+    <div id="mobile-scroll-indicator" class="flex flex-col items-center space-y-2 bg-gray-800 p-2 rounded-full shadow-lg">
+        <a href="#hero" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="hero" aria-label="Go to Home"></a>
+        <a href="#about" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="about" aria-label="Go to About"></a>
+        <a href="#experience" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="experience" aria-label="Go to Experience"></a>
+        <a href="#projects" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="projects" aria-label="Go to Projects"></a>
+        <a href="#skills" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="skills" aria-label="Go to Skills"></a>
+        <a href="#interests" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="interests" aria-label="Go to Interests"></a>
+        <a href="#contact" class="mobile-scroll-dot w-3 h-3 rounded-full bg-gray-500 transition-all duration-300" data-section="contact" aria-label="Go to Contact"></a>
+    </div>
+</div>
 <!-- Scroll Indicator -->
 <div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
     <div id="scroll-indicator" class="bg-gray-800 p-4 rounded-r-lg shadow-lg">
@@ -26,6 +38,7 @@
             <li><a href="#experience" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="experience">Experience</a></li>
             <li><a href="#projects" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="projects">Projects</a></li>
             <li><a href="#skills" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="skills">Skills</a></li>
+            <li><a href="#interests" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="interests">Interests</a></li>
             <li><a href="#contact" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="contact">Contact</a></li>
         </ul>
     </div>
@@ -48,6 +61,7 @@
             <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Experience</a>
             <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Projects</a>
             <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Skills</a>
+            <a href="#interests" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Interests</a>
             <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300 relative before:content-[''] before:absolute before:bottom-0 before:left-1/2 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all before:duration-300 hover:before:w-full hover:before:left-0 hover:-translate-y-1 hover:shadow-glow-text">Contact</a>
         </div>
     </div>
@@ -59,6 +73,7 @@
             <a href="#experience" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Experience</a>
             <a href="#projects" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Projects</a>
             <a href="#skills" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Skills</a>
+            <a href="#interests" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Interests</a>
             <a href="#contact" class="text-gray-300 hover:text-blue-400 transition-all duration-300">Contact</a>
         </div>
     </div>
@@ -297,7 +312,38 @@
         </div>
     </div>
 </section>
-
+<!-- Interests Section -->
+<section id="interests" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 animate-fade-in">Personal Interests</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Cooking -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-200">
+                <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                    <i class="fas fa-utensils text-5xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mt-4 text-blue-300">Cooking</h3>
+                <p class="text-gray-300 mt-2">Exploring culinary arts with a passion for creating flavorful dishes from scratch, blending creativity with technique.</p>
+            </div>
+            <!-- Gardening -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-400">
+                <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                    <i class="fas fa-seedling text-5xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mt-4 text-blue-300">Gardening</h3>
+                <p class="text-gray-300 mt-2">Cultivating a thriving garden, growing fresh herbs, vegetables, and flowers with sustainable practices.</p>
+            </div>
+            <!-- Brewing Beer -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-lg transform hover:scale-105 transition animate-fade-in delay-600">
+                <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-blue-700 rounded-t-lg flex items-center justify-center">
+                    <i class="fas fa-beer text-5xl text-white"></i>
+                </div>
+                <h3 class="text-xl font-semibold mt-4 text-blue-300">Brewing Beer</h3>
+                <p class="text-gray-300 mt-2">Crafting unique homebrews, experimenting with recipes and fermentation to perfect the art of beer-making.</p>
+            </div>
+        </div>
+    </div>
+</section>
 <!-- Contact Section -->
 <section id="contact" class="py-20">
     <div class="container mx-auto px-6 text-center">
