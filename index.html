@@ -17,6 +17,19 @@
     <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body class="bg-gray-900 text-gray-100 font-sans">
+<!-- Scroll Indicator -->
+<div class="fixed left-0 top-1/2 transform -translate-y-1/2 z-50 hidden lg:block">
+    <div id="scroll-indicator" class="bg-gray-800 p-4 rounded-r-lg shadow-lg">
+        <ul class="space-y-3">
+            <li><a href="#hero" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="hero">Home</a></li>
+            <li><a href="#about" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="about">About</a></li>
+            <li><a href="#experience" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="experience">Experience</a></li>
+            <li><a href="#projects" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="projects">Projects</a></li>
+            <li><a href="#skills" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="skills">Skills</a></li>
+            <li><a href="#contact" class="scroll-link text-sm text-gray-400 hover:text-blue-400 transition-all duration-300" data-section="contact">Contact</a></li>
+        </ul>
+    </div>
+</div>
 <!-- Navigation -->
 <nav class="fixed top-0 w-full bg-gray-800 shadow-lg z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -90,23 +103,33 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-blue-400 animate-fade-in">Experience</h2>
             <div class="space-y-12 max-w-3xl mx-auto">
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-200">
-                    <h3 class="text-2xl font-semibold text-blue-300">Director of IT</h3>
-                    <p class="text-gray-400">Knoxville CUSD #202 | May 2021 - Present (4 years)</p>
-                    <p class="text-gray-200 mt-4">Spearheaded IT transformation for a K-12 district, leveraging open-source technologies and modern infrastructure to enhance educational outcomes and operational efficiency.</p>
+                    <div class="flex items-start mb-4">
+                        <img src="assets/img/about/1.png" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4 object-cover border-4 border-blue-300">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-300">Director of IT</h3>
+                            <p class="text-gray-400">Knoxville CUSD #202 | May 2021 - Present (4 years)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-200 mt-4">Directed IT strategy for a K-12 district, driving cost-effective, scalable solutions through open-source technologies and modern infrastructure to enhance operational efficiency and support educational goals.</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200 space-y-2">
-                        <li><strong>Open-Source Adoption:</strong> Led migration to open-source solutions, cutting costs while maintaining quality and performance standards.</li>
-                        <li><strong>Containerization:</strong> Architected Docker-based infrastructure for services like help desk (Zammad), network management (UniFi), and asset tracking (Snipe-IT).</li>
-                        <li><strong>Web Services:</strong> Implemented Caddy server with reverse proxy for secure, efficient service delivery across the district.</li>
-                        <li><strong>Virtualization:</strong> Migrated from VMware to XCP-ng/Xen Orchestra, optimizing virtualization performance and reducing licensing expenses.</li>
-                        <li><strong>Software Development:</strong> Developed a Next.js asset tracking app on Vercel with MongoDB and Active Directory integration for streamlined inventory management.</li>
-                        <li><strong>Leadership & Policy:</strong> Created IT policies and led a 2-person team to support district-wide technology initiatives.</li>
-                        <li><strong>Systems Administration:</strong> Managed Google Workspace and Active Directory with PowerShell and Python automation scripts.</li>
-                        <li><strong>Compliance:</strong> Ensured adherence to ISBE SIS state reporting requirements, maintaining regulatory standards.</li>
+                        <li><strong>Cost Optimization:</strong> Spearheaded migration from proprietary systems to enterprise-grade open-source alternatives, reducing costs without compromising service quality.</li>
+                        <li><strong>Containerized Infrastructure:</strong> Designed and deployed Docker-based systems for critical services, including help desk (Zammad), network management (UniFi), password management (Vaultwarden), and asset tracking (Snipe-IT).</li>
+                        <li><strong>Service Delivery:</strong> Implemented Caddy server with reverse proxy for secure, automated certificate management and efficient service access district-wide.</li>
+                        <li><strong>Virtualization Overhaul:</strong> Transitioned from VMware to XCP-ng/Xen Orchestra, enhancing virtualization efficiency and slashing licensing expenses.</li>
+                        <li><strong>Custom Development:</strong> Built a Next.js asset tracking app on Vercel with serverless functions, MongoDB, and Active Directory integration, automating device management and password resets via an on-prem Python API.</li>
+                        <li><strong>Team Leadership:</strong> Led a 2-person IT team, established policies, and drove district-wide technology initiatives and user training.</li>
+                        <li><strong>Systems Management:</strong> Administered Google Workspace and Active Directory using GUI, PowerShell, GAM, and Python for streamlined operations.</li>
+                        <li><strong>Regulatory Compliance:</strong> Oversaw ISBE SIS state reporting, ensuring accurate and timely data submissions to meet Illinois state mandates.</li>
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-400">
-                    <h3 class="text-2xl font-semibold text-blue-300">Systems Administrator & Software Engineer</h3>
-                    <p class="text-gray-400">NAEIR | Oct 2018 - Apr 2021 (2 years 7 months)</p>
+                    <div class="flex items-start mb-4">
+                        <img src="assets/img/about/naeir.jpg" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4 object-cover border-4 border-blue-300">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-300">Systems Administrator & Software Engineer</h3>
+                            <p class="text-gray-400">NAEIR | Oct 2018 - Apr 2021 (2 years 7 months)</p>
+                        </div>
+                    </div>
                     <p class="text-gray-200 mt-4">Played a pivotal role in modernizing IT infrastructure, enhancing system performance, and developing robust software solutions. Leveraged a diverse skill set to manage enterprise systems, streamline operations, and deliver innovative applications.</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200 space-y-2">
                         <li><strong>Cloud Migration & Email Systems:</strong> Successfully orchestrated the migration of an Exchange 2010 server to a fully integrated Office 365 environment, implementing Active Directory synchronization to ensure seamless user authentication and email continuity across the organization.</li>
@@ -130,8 +153,13 @@
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-600">
-                    <h3 class="text-2xl font-semibold text-blue-300">Information Systems Technician</h3>
-                    <p class="text-gray-400">City of Galesburg | Apr 2013 - Oct 2018 (5 years 7 months)</p>
+                    <div class="flex items-start mb-4">
+                        <img src="assets/img/about/cog.jpg" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4 object-cover border-4 border-blue-300">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-300">Information Systems Technician</h3>
+                            <p class="text-gray-400">City of Galesburg | Apr 2013 - Oct 2018 (5 years 7 months)</p>
+                        </div>
+                    </div>
                     <p class="text-gray-200 mt-4">Delivered comprehensive IT support and development for municipal operations, enhancing public services through innovative software solutions and robust system administration.</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200 space-y-2">
                         <li><strong>Hardware Management:</strong> Managed 100+ computers, performing repairs, upgrades, and maintenance to ensure operational reliability across departments.</li>
@@ -152,8 +180,13 @@
                     </ul>
                 </div>
                 <div class="bg-gray-700 p-6 rounded-lg shadow-lg animate-fade-in delay-800">
-                    <h3 class="text-2xl font-semibold text-blue-300">MSP Support Technician</h3>
-                    <p class="text-gray-400">Office Specialists, Inc. | Dec 2013 - Jan 2014 (2 months)</p>
+                    <div class="flex items-start mb-4">
+                        <img src="assets/img/about/os.png" alt="Profile Picture" class="w-16 h-16 rounded-full mr-4 object-cover border-4 border-blue-300">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-blue-300">MSP Support Technician</h3>
+                            <p class="text-gray-400">Office Specialists, Inc. | Dec 2013 - Jan 2014 (2 months)</p>
+                        </div>
+                    </div>
                     <p class="text-gray-200 mt-4">Served as a technician at a Managed Service Provider (MSP), delivering a wide range of IT support services, including installations, configurations, and troubleshooting for diverse client environments. Enhanced operational efficiency through hands-on technical expertise and process improvements.</p>
                     <ul class="list-disc ml-6 mt-4 text-gray-200 space-y-2">
                         <li><strong>Technical Support:</strong> Provided hands-on assistance with imaging, networking, and equipment troubleshooting across client sites, ensuring reliable system performance.</li>

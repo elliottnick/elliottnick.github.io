@@ -156,3 +156,60 @@ html {
 .hover\:animate-button-glow:hover {
   animation: button-glow 1s infinite;
 }
+
+.scroll-link.active {
+  color: #60A5FA; /* blue-400 */
+  font-weight: bold;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.scroll-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background-color: #60A5FA; /* blue-400 */
+  border-radius: 2px;
+}
+
+.scroll-link {
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.mobile-scroll-dot.active {
+  background-color: #60A5FA; /* blue-400 */
+  width: 12px;
+  height: 12px;
+  transform: scale(1.5);
+}
+
+.mobile-scroll-dot {
+  transition: all 0.3s ease;
+  touch-action: manipulation; /* Prevents double-tap zoom on touch */
+}
+
+/* Ensure touch targets are large enough */
+.mobile-scroll-dot::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  z-index: -1; /* Keeps it behind the dot */
+}
+
+/* Fade out when scrolling, fade in when stopped */
+#mobile-scroll-indicator {
+  transition: opacity 0.3s ease;
+}
+
+#mobile-scroll-indicator.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevents interaction when hidden */
+}

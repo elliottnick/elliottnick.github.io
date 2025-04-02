@@ -147,3 +147,96 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// Scroll Indicator Functionality
+document.addEventListener('DOMContentLoaded', () => {
+    // Desktop elements
+    const desktopLinks = document.querySelectorAll('.scroll-link');
+    // Mobile elements
+    const mobileDots = document.querySelectorAll('.mobile-scroll-dot');
+    const mobileIndicator = document.getElementById('mobile-scroll-indicator');
+    const sections = document.querySelectorAll('section');
+
+    // Function to update active indicators (both desktop and mobile)
+    function updateActiveIndicator() {
+        let current = '';
+        const scrollPosition = window.scrollY + window.innerHeight / 3;
+        const documentHeight = document.documentElement.scrollHeight;
+        const windowHeight = window.innerHeight;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.clientHeight;
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        // Special case for top (#hero)
+        if (window.scrollY < sections[0].clientHeight / 2) {
+            current = 'hero';
+        }
+
+        // Special case for bottom (#contact)
+        if (window.scrollY + windowHeight >= documentHeight - 50) {
+            current = 'contact';
+        }
+
+        // Update desktop links
+        desktopLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === current) {
+                link.classList.add('active');
+            }
+        });
+
+        // Update mobile dots
+        mobileDots.forEach(dot => {
+            dot.classList.remove('active');
+            if (dot.getAttribute('data-section') === current) {
+                dot.classList.add('active');
+            }
+        });
+    }
+
+    // Smooth scrolling for desktop links
+    desktopLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Smooth scrolling for mobile dots
+    mobileDots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = dot.getAttribute('href').substring(1);
+            document.getElementById(targetId).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Fade out mobile indicator during scroll, fade in when stopped
+    let scrollTimeout;
+    window.addEventListener('scroll', () => {
+        mobileIndicator.classList.add('hidden');
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            mobileIndicator.classList.remove('hidden');
+        }, 150); // Show after 150ms of no scrolling
+    });
+
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveIndicator);
+
+    // Initial update
+    updateActiveIndicator();
+
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+});
