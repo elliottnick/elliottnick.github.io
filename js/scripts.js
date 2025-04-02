@@ -343,7 +343,7 @@ function adjustHeroPadding() {
     if (window.innerWidth < 1024) { // Mobile
         hero.style.paddingTop = `${navHeight}px`;
         if (window.matchMedia("(orientation: landscape)").matches) {
-            hero.style.minHeight = `calc(100vh - ${navHeight}px)`;
+            hero.style.minHeight = `calc(150vh - ${navHeight}px)`;
         } else {
             hero.style.minHeight = '100vh'; // Reset for portrait
         }
